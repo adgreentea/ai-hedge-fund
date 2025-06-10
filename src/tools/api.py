@@ -123,6 +123,7 @@ def search_line_items(
         return []
 
     # Cache the results
+    _cache.set_line_items(ticker, [item.model_dump() for item in search_results])
     return search_results[:limit]
 
 
